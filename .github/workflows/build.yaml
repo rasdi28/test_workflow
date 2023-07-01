@@ -13,27 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: List files
-        run: ls -R
-
-      - name: Create ZIP file
-        run: zip -r belajarworkflow.zip .
-
-      - name: Upload ZIP artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: belajarworkflow
-          path: belajarworkflow.zip
-
-      - name: Build and Test
-        run: |
-          echo "Building and testing the project..."
-          # Tambahkan perintah build dan pengujian yang sesuai di sini
-
-      - name: Deploy
-        run: |
-          echo "Deploying the project..."
-          # Tambahkan perintah untuk deploy atau mengirim notifikasi di sini
+    -name : Test
+    run : |
+    echo "sukses"
+      
