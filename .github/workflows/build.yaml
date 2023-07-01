@@ -2,8 +2,15 @@ name: build and test
 
 on:
 push:
-branches:
--main
+branches: -main
 
 jobs:
-  "hello world";
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set output
+        id: set_output
+        run: echo "::set-output name=example_output::Hello, World!"
+
+      - name: Use output
+        run: echo "The output is ${{ needs.build.outputs.example_output }}"
